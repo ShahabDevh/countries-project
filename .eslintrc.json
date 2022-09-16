@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "globals": {
+    "React":"readonly"
+  },
+  "rules": {
+    // Set rules for linting warn/error
+  }
 }
