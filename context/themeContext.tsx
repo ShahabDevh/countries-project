@@ -21,6 +21,7 @@ const themeReducer = (state: State, action: Action) => {
 };
 
 function ThemeContextProvider({ children }: ThemeProviderProps) {
+	// @ts-ignore
 	const [state, dispatch] = useReducer(themeReducer, { theme: "light" });
 	const value = { state, dispatch };
 
