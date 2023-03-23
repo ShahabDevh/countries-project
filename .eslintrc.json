@@ -5,6 +5,7 @@
     "React":"readonly"
   },
   "rules": {
+    "no-unused-vars":"warn"
     // Set rules for linting warn/error
   }
 }
