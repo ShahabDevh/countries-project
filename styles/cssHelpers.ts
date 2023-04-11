@@ -11,3 +11,8 @@ export const H2 = styled.h2`
 	color: ${({ theme }) => theme.color.text};
 	font-size: 2.2rem;
 `;
+
+export const Loading = styled.span`
+	color: ${({ theme }) => theme.color.text};
+	font-size: 2.2rem;
+`;

@@ -1,8 +1,7 @@
-import MainPage from "layout/mainPage/MainPage";
-import type { NextPage } from "next";
+import MainPage from "layout/main-page/MainPage";
 import Head from "next/head";
 
-const Home: NextPage = () => {
+const Home = () => {
 	return (
 		<div>
 			<Head>

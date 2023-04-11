@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const CardContainer = styled.div`
+export const CountriesContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;

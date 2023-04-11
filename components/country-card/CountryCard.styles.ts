@@ -15,6 +15,7 @@ export const Card = styled.div`
 export const ImageWrapper = styled.div`
 	position: relative;
 	width: 100%;
+	/* max-width: 32rem; */
 	height: 18rem;
 `;
 

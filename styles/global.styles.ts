@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-  
+export const GlobalStyle = createGlobalStyle`  
   :root {
     font-size: 62.5%;
   }
@@ -15,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
-    font-family: 'Nunito Sans';
     background: ${({ theme }) => theme.color.background};
   }
 `;
