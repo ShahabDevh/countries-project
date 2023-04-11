@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 
 type Action = { type: "toggle-theme" };
-// eslint-disable-next-line no-unused-vars
 type Dispatch = (action: Action) => void;
 type State = { theme: "light" | "dark" };
 type ThemeProviderProps = { children: React.ReactNode };
@@ -9,7 +8,7 @@ type ThemeProviderProps = { children: React.ReactNode };
 const ThemeContext =
 	createContext<{ state: State; dispatch: Dispatch } | undefined>(undefined);
 
-const themeReducer = (state: State, action: Action) => {
+const themeReducer = (state: State, action: Action): State => {
 	switch (action.type) {
 		case "toggle-theme":
 			return { theme: state.theme === "light" ? "dark" : "light" };
@@ -21,20 +20,22 @@ const themeReducer = (state: State, action: Action) => {
 };
 
 function ThemeContextProvider({ children }: ThemeProviderProps) {
-	// @ts-ignore
-	const [state, dispatch] = useReducer(themeReducer, { theme: "light" });
-	const value = { state, dispatch };
+	const [state, dispatch] = useReducer(themeReducer, { theme: "dark" });
 
 	return (
-		<ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+		<ThemeContext.Provider value={{ state, dispatch }}>
+			{children}
+		</ThemeContext.Provider>
 	);
 }
 
 function useTheme() {
 	const context = useContext(ThemeContext);
+
 	if (context === undefined) {
-		throw new Error("useCount must be used within a CountProvider");
+		throw new Error("useTheme must be used within a ThemeProvider");
 	}
+
 	return context;
 }
 

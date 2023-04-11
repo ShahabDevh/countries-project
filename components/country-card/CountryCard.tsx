@@ -1,5 +1,7 @@
+import { Country } from "interfaces/countries";
 import Image from "next/image";
 import { H2 } from "styles/cssHelpers";
+import { getPlaceholderImageURL } from "utils/image";
 import { formatToThreeDigit } from "utils/number";
 import {
 	Card,
@@ -9,11 +11,22 @@ import {
 	ImageWrapper,
 } from "./CountryCard.styles";
 
-function CountryCard({ data }: { data: any }) {
+type IProps = {
+	data: Country;
+};
+
+function CountryCard({ data }: IProps) {
 	return (
 		<Card>
 			<ImageWrapper>
-				<Image src={data.flags.png} alt={data.name.official} layout="fill" />
+				<Image
+					src={data.flags.png}
+					alt={data.name.official}
+					placeholder="blur"
+					blurDataURL={getPlaceholderImageURL(data.flags.png)}
+					loading={"lazy"}
+					fill
+				/>
 			</ImageWrapper>
 
 			<CountryInfoWrapper>
